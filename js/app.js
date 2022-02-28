@@ -22,19 +22,21 @@ const searchField = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => displayPhone(data.data))
-         
+
     }
 
 }
 const displayPhone = phones => {
-    //console.log(phones);
+
     if (phones.length == 0) {
         document.getElementById('error-message').innerText = 'No Phone Found! Please check your input and try again.';
     }
-    
+
     else {
+
         document.getElementById('error-message').innerText = '';
-        phones.forEach(phone => {
+        const deviceLimit = phones.slice(0, 20);
+        deviceLimit.forEach(phone => {
             //  console.log(phone);
             const div = document.createElement('div');
             div.classList.add('card');
@@ -57,7 +59,40 @@ const singlePhoneDetails = id => {
     const url = ` https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
         .then(res => res.json())
-        .then(data =>console.log(data.data))
+        .then(data => displaySinglePhoneDetails(data.data))
+}
+
+
+
+const displaySinglePhoneDetails = phone => {
+    parent2.textContent = '';
+    const div = document.createElement('div')
+    div.classList.add('card');
+    div.innerHTML = `
+           <div class="row d-flex justify-content-center align-content-center ">
+                  <div class="col-md-4">
+                      <img src="${phone.image}" class="" alt="">
+                  </div>
+    
+                <div class="col-md-8">
+                        <h5>Name:${phone.name}</h5>
+                        <h5>ReleaseDate:${phone?.releaseDate}</h5>
+                        <h5>Brand:${phone.brand}</h5>
+                        <h5>DisplaySize:${phone.mainFeatures.displaySize}</h5>
+                        <h5>Storage:${phone.mainFeatures.storage}</h5>
+                        <h5>ChipSet:${phone.mainFeatures.chipSet}</h5>
+                        <h5>Memory:${phone.mainFeatures.memory}</h5>
+                        <h5>Sensors:</h5>
+                        <p>WLAN:${phone.others.WLAN}</p>
+                        <P>Bluetooth:${phone.others.Bluetooth}</P>
+                        <P>GPS:${phone.others.GPS}</P>
+                        <P>NFC:${phone.others.NFC}</P>
+                        <P>Radio:${phone.others.Radio}</P>
+                        <p>USB:${phone.others.USB}</p>
+                </div>
+         </div>
+    `
+    parent2.appendChild(div);
 }
 
 
