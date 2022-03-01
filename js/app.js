@@ -75,6 +75,7 @@ const displayPhone = phones => {
 //----------------Single phone API loaded Code Start Here-----------\\
 
 const singlePhoneDetails = productsId => {
+    console.log(productsId);
     const url = ` https://openapi.programming-hero.com/api/phone/${productsId}`
     fetch(url)
         .then(res => res.json())
@@ -106,12 +107,12 @@ const displaySinglePhoneDetails = phone => {
                         <h5><u>ChipSet</u>: ${phone.mainFeatures.chipSet}</h5>
                         <h5><u>Memory</u>: ${phone.mainFeatures.memory}</h5>
                         <h5><u>Sensors</u>: ${phone.mainFeatures.sensors.slice()}</h5>
-                        <p><u>WLAN</u>: ${phone.others.WLAN}</p>
-                        <P><u>Bluetooth</u>: ${phone.others.Bluetooth}</P>
-                        <P><u>GPS</u>: ${phone.others.GPS}</P>
-                        <P><u>NFC</u>: ${phone.others.NFC}</P>
-                        <P><u>Radio</u>: ${phone.others.Radio}</P>
-                        <p><u>USB</u>: ${phone.others.USB}</p>
+                        <p><u>WLAN</u>: ${phone?.others?.WLAN}</p>
+                        <P><u>Bluetooth</u>: ${phone?.others?.Bluetooth}</P>
+                        <P><u>GPS</u>: ${phone?.others?.GPS}</P>
+                        <P><u>NFC</u>: ${phone?.others?.NFC}</P>
+                        <P><u>Radio</u>: ${phone?.others?.Radio}</P>
+                        <p><u>USB</u>: ${phone?.others?.USB}</p>
                         </div>
                  </div>
     `
