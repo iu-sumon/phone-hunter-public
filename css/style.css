@@ -10,12 +10,20 @@ body
 background-color:black !important ;
 font-family: 'Poppins', sans-serif;
 }
-
+header
+{
+    background-color: #6047ec !important;
+}
+footer
+{
+    background-color: #6047ec !important;
+}
 
 /*--------------- Search Field Style here-------------------------------*/
 .search-area
 {
-    border-radius: 20px;
+    background-color:white !important;
+    border-radius: 10px;
 }
 
 

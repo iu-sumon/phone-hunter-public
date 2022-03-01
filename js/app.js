@@ -58,7 +58,7 @@ const displayPhone = phones => {
           <div class="card-body">
              <h3>${phone.phone_name}</h5>
              <h4>${phone.brand}</h4>
-             <button onclick="singlePhoneDetails('${phone.slug}')" type="button" id="details-btn" class="btn btn-info fs-6 fw-bold">Details</button>
+             <button onclick="singlePhoneDetails('${phone.slug}')" type="button" id="details-btn" class="btn btn-primary fs-6 fw-bold">Details</button>
           </div>
        `
             parent1.appendChild(div);
