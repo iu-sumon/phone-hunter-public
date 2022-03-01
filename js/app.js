@@ -69,26 +69,26 @@ const displaySinglePhoneDetails = phone => {
     const div = document.createElement('div')
     div.classList.add('card');
     div.innerHTML = `
-           <div class="row d-flex justify-content-center align-content-center ">
+           <div class="row p-5">
                   <div class="col-md-4">
                       <img src="${phone.image}" class="" alt="">
                   </div>
     
-                <div class="col-md-8">
-                        <h5>Name:${phone.name}</h5>
-                        <h5>ReleaseDate:${phone?.releaseDate}</h5>
-                        <h5>Brand:${phone.brand}</h5>
-                        <h5>DisplaySize:${phone.mainFeatures.displaySize}</h5>
-                        <h5>Storage:${phone.mainFeatures.storage}</h5>
-                        <h5>ChipSet:${phone.mainFeatures.chipSet}</h5>
-                        <h5>Memory:${phone.mainFeatures.memory}</h5>
-                        <h5>Sensors:</h5>
-                        <p>WLAN:${phone.others.WLAN}</p>
-                        <P>Bluetooth:${phone.others.Bluetooth}</P>
-                        <P>GPS:${phone.others.GPS}</P>
-                        <P>NFC:${phone.others.NFC}</P>
-                        <P>Radio:${phone.others.Radio}</P>
-                        <p>USB:${phone.others.USB}</p>
+                <div class="col-md-8 text">
+                        <h5>Name: ${phone.name}</h5>
+                        <h5>ReleaseDate: ${phone?.releaseDate}</h5>
+                        <h5>Brand: ${phone.brand}</h5>
+                        <h5>DisplaySize: ${phone.mainFeatures.displaySize}</h5>
+                        <h5>Storage: ${phone.mainFeatures.storage}</h5>
+                        <h5>ChipSet: ${phone.mainFeatures.chipSet}</h5>
+                        <h5>Memory: ${phone.mainFeatures.memory}</h5>
+                        <h5>Sensors: ${phone.mainFeatures.sensors.slice(0,3)}</h5>
+                        <p>WLAN: ${phone.others.WLAN}</p>
+                        <P>Bluetooth: ${phone.others.Bluetooth}</P>
+                        <P>GPS: ${phone.others.GPS}</P>
+                        <P>NFC: ${phone.others.NFC}</P>
+                        <P>Radio: ${phone.others.Radio}</P>
+                        <p>USB: ${phone.others.USB}</p>
                 </div>
          </div>
     `
