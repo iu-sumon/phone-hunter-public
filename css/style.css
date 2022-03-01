@@ -1,10 +1,25 @@
+/* -------------------------google font -------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+
+/* --------------------------Common Utilities ---------------------------*/
 
 body
 {
 background-color:black !important ;
 font-family: 'Poppins', sans-serif;
 }
+
+
+/*--------------- Search Field Style here-------------------------------*/
+.search-area
+{
+    border-radius: 20px;
+}
+
+
+/*--------------- display Phone Style here-------------------------------*/
  #parent-1
  {   
      display: grid;
@@ -12,13 +27,9 @@ font-family: 'Poppins', sans-serif;
      gap: 20px;
      width: 70%;
      margin: 0 auto;
-     
- }
-.search-area
-{
-    border-radius: 20px;
 }
-.card{
+.card
+{
     text-align: center;
     border-radius: 20px !important;
 }
@@ -27,8 +38,12 @@ font-family: 'Poppins', sans-serif;
     width: 150px;
     padding:10px;
     margin: 0 auto;
-    
 }
+/*--------------- display Phone Style here-------------------------*/
+
+
+
+/*--------------- Spinner Style here-------------------------------*/
 #spinner
 {   width: 100px;
     height: 100px;
@@ -36,6 +51,14 @@ font-family: 'Poppins', sans-serif;
     display: none;
 }
  
+/*---------------Display Single Phone Details Style here-----------*/
+.details-card
+ {
+       border-radius:25px;
+ }
+
+
+ /*---------------Media Query Code Start here-----------*/
 
 @media only screen and (max-width:600px)
 {  #parent-1
@@ -45,16 +68,12 @@ font-family: 'Poppins', sans-serif;
         gap: 20px;
         width: 70%;
         margin: 0 auto;
-        
     }
     .search-area
     {
         display: flex;
-         flex-direction: column;
-         
+        flex-direction: column;
     }
-    
-
-
-
 }
+
+ /*---------------Media Query Code end here-----------*/
