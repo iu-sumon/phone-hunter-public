@@ -14,6 +14,11 @@ const searchField = () => {
         parent1.textContent = '';
         parent2.textContent = '';
     }
+     else if (Number.isInteger(parseInt(searchFieldText))) {
+        document.getElementById('error-message').innerText = 'Do not allow number type value! please provide valid input.';
+        parent1.textContent = '';
+        parent2.textContent = '';
+    }
 
     else {
 
@@ -55,6 +60,40 @@ const displayPhone = phones => {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const singlePhoneDetails = id => {
     const url = ` https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
@@ -62,7 +101,7 @@ const singlePhoneDetails = id => {
         .then(data => displaySinglePhoneDetails(data.data))
 }
 
-
+//const releaseDateValue='not found'
 
 const displaySinglePhoneDetails = phone => {
     parent2.textContent = '';
@@ -70,19 +109,19 @@ const displaySinglePhoneDetails = phone => {
     div.classList.add('card');
     div.innerHTML = `
            <div class="row p-5">
-                  <div class="col-md-4">
-                      <img src="${phone.image}" class="" alt="">
+                  <div class="col-md-4 p-5">
+                      <img src="${phone.image}" alt="">
                   </div>
     
-                <div class="col-md-8 text">
-                        <h5>Name: ${phone.name}</h5>
-                        <h5>ReleaseDate: ${phone?.releaseDate}</h5>
+                <div class="col-md-8 bg-dark text-white rounded shadow-lg">
+                        <h3>Name: ${phone.name}</h3>
+                        <h5>ReleaseDate: ${phone.releaseDate ? phone.releaseDate : `Not Found! Coming soon.`}</h5>
                         <h5>Brand: ${phone.brand}</h5>
                         <h5>DisplaySize: ${phone.mainFeatures.displaySize}</h5>
                         <h5>Storage: ${phone.mainFeatures.storage}</h5>
                         <h5>ChipSet: ${phone.mainFeatures.chipSet}</h5>
                         <h5>Memory: ${phone.mainFeatures.memory}</h5>
-                        <h5>Sensors: ${phone.mainFeatures.sensors.slice(0,3)}</h5>
+                        <h5>Sensors: ${phone.mainFeatures.sensors.slice()}</h5>
                         <p>WLAN: ${phone.others.WLAN}</p>
                         <P>Bluetooth: ${phone.others.Bluetooth}</P>
                         <P>GPS: ${phone.others.GPS}</P>
