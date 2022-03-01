@@ -113,7 +113,7 @@ const displaySinglePhoneDetails = phone => {
                         <P><u>NFC</u>: ${phone?.others?.NFC}</P>
                         <P><u>Radio</u>: ${phone?.others?.Radio}</P>
                         <p><u>USB</u>: ${phone?.others?.USB}</p>
-                        </div>
+               </div>
                  </div>
     `
     parent2.appendChild(div);
